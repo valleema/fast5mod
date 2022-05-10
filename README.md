@@ -49,7 +49,7 @@ file:
     FAST5PATH=guppy/workspace
     REFERENCE=grch38.fasta
     OUTBAM=meth.bam
-    fast5mod guppy2sam ${FAST5PATH} ${REFERENCE} \
+    fast5mod guppy2sam ${FAST5PATH} --reference ${REFERENCE} \
         --workers 74 --recursive \
         | samtools sort -@ 8 | samtools view -b -@ 8 > ${OUTBAM}
     samtools sort ${OUTBAM}
